@@ -1,0 +1,32 @@
+{
+    "name": "master",
+    "version": "1.0.0",
+    "description": "Repositorio para las pruebas de sqli",
+    "main": "login.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/edisoncast/SQLI-master.git"
+    },
+    "keywords": [
+        "SQLI",
+        "BlindSql"
+    ],
+    "author": "Jhon Edison Castro Sánchez aka pacojecs14",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/edisoncast/SQLI-master/issues"
+    },
+    "homepage": "https://github.com/edisoncast/SQLI-master#readme",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "cors": "^2.8.5",
+        "crypto": "^1.0.1",
+        "express": "^4.17.1",
+        "express-session": "^1.17.0",
+        "mysql": "^2.17.1",
+        "path": "^0.12.7"
+    }
+}
