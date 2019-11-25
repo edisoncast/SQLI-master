@@ -49,7 +49,10 @@ app.post('/auth', function(request, response) {
     const password = request.body.password;
     if (email && password) {
         const hash = crypto.pbkdf2Sync(password, "S3cureSalt", 100, 127, 'sha512').toString('hex');
-        connection.query('SELECT * FROM users WHERE email = ? AND password = ?', [email, hash], function(error, results, fields) {
+        let usernameQuery = "SELECT * FROM `users` WHERE email = '" + email + "' and password = '" + password + "'";
+        console.log("Consulta", usernameQuery);
+
+        connection.query(usernameQuery, function(error, results, fields) {
             if (error) throw error;
             if (results.length > 0) {
                 request.session.loggedin = true;
