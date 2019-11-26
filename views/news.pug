@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' type='text/css' media='screen' href='./news.css'>
+</head>
+
+<body>
+
+
+    <div class="row">
+        <div class="leftcolumn">
+            <p class="c2" style="width:80%;padding:20px;" align="center">
+                Seleccioe Seleccione el id de una noticia:<br/><br/>
+
+
+                <form action="/new" method="GET">
+                    <select name="id" onchange="submit()">
+                        <optgroup label="Seleccionar noticia">
+                            <option value="-1">SELECCIONE UNA NOTICIA </option>
+                            <option name="table2" value="1">Noticia 1</option>
+                            <option name="table3" value="2">Noticia 2</option>
+                        </optgroup>
+                    </select>
+                    if data  
+                     #{data.id} #{data.title} #{data.body} #{data.Datetime}
+                </form>
+
+                            
+
+            </p> 
+
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
