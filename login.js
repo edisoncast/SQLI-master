@@ -49,7 +49,7 @@ app.post('/auth', function(request, response) {
     const password = request.body.password;
     if (email && password) {
         const hash = crypto.pbkdf2Sync(password, "S3cureSalt", 100, 127, 'sha512').toString('hex');
-        let usernameQuery = "SELECT * FROM `users` WHERE email = '" + email + "' and password = '" + password + "'";
+        let usernameQuery = "SELECT * FROM `users` WHERE email = '" + email + "' and password = '" + hash + "'";
         console.log("Consulta", usernameQuery);
 
         connection.query(usernameQuery, function(error, results, fields) {
@@ -57,7 +57,7 @@ app.post('/auth', function(request, response) {
             if (results.length > 0) {
                 request.session.loggedin = true;
                 request.session.email = email;
-                response.redirect('/news.html');
+                response.redirect('/public/news.html');
             } else {
                 response.send('Usuario o password incorrecto!');
             }
